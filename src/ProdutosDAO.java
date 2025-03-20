@@ -71,5 +71,18 @@ public class ProdutosDAO {
             return null;
         }
     }
+    
+    public void venderProduto (int _id){
+        //conn = new conectaDAO().connectDB();
+        String sql = "UPDATE produtos SET status = 'Vendido' WHERE id = ?";
+        
+        try {
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
+            stmt.setString(1, String.valueOf(_id));
+            stmt.execute();
+        } catch (Exception e) {
+            System.out.println("Erro ProdutosDAO" + e.getMessage());
+        }
+    }
 }
 
