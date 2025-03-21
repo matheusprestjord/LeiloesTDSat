@@ -17,7 +17,7 @@ public class vendasVIEW extends javax.swing.JFrame {
     public void preencherTabela() {
         ProdutosDAO produtosDAO = new ProdutosDAO();
         
-        List<ProdutosDTO> produtos = produtosDAO.listarTodos();
+        List<ProdutosDTO> produtos = produtosDAO.listarVendidos();
         
         DefaultTableModel tabelaProdutos = (DefaultTableModel) listaProdutos.getModel(); 
         
